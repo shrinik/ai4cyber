@@ -6,4 +6,5 @@
 
 .landing {
   background-image: url("../img/background.jpg");
+  background-attachment: scroll;
 }

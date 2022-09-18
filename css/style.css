@@ -4,7 +4,16 @@
   padding: 4rem;
 }
 
-.landing {
+.landing-page {
   background-image: url("../img/background.jpg");
   background-attachment: scroll;
+}
+
+.category-page {
+  background-image: url("../img/background.jpg");
+  background-attachment: scroll;
+}
+
+.content-page {
+  background-color: gainsboro;
 }

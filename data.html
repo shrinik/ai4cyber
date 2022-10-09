@@ -4,13 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Data</title>
+
+  <title>Hospital Industry</title>
 
   <link href="css/bootstrap.css" rel="stylesheet" />
   <script src="js/bootstrap.js"></script>
 </head>
 
-<body class="category-page">
+<body>
   <nav class="navbar navbar-expand-sm bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">AI4Cyber</a>
@@ -34,59 +35,98 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="index.html">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">
-        Threat Modelling
+        Data Sources
       </li>
     </ol>
   </nav>
-  <div class="p-5 mb-4 rounded-3">
+  <div class="p-5 mb-4 bg-light rounded-3">
     <div class="container-fluid py-5">
-      <h1 class="display-5 fw-bold">Threat Modelling</h1>
+      <h1 class="display-5 fw-bold">Data Sources</h1>
       <p class="col-md-8 fs-4">
-        <small class="text-muted">Explore the different threats faced by the hospital industry</small>
+        <small class="text-muted">This section summarizes the open source intelligence data sources that are relevant to
+          the hospital industry</small>
       </p>
     </div>
   </div>
   <div class="CenterMe">
-    <div class="row align-items-md-stretch">
-      <div class="col-md-4">
-        <div class="h-100 p-5 text-bg-dark rounded-3">
-          <h2>Critical asset identification</h2>
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'Phishtank')" id="defaultOpen">Phishtank</button>
+      <button class="tablinks" onclick="openTab(event, 'Shodan')">Shodan</button>
+      <button class="tablinks" onclick="openTab(event, 'CVE')">CVE</button>
+    </div>
+    <div id="Phishtank" class="tabcontent">
+      <article>
+        <h1>Phishtank</h1>
+        <section>
+          <h3>Data Description</h3>
           <p>
-            Check the Five critical assets of the hospital industry
+          <ul>
+            <li>The below data was downloaded as a CSV file from the PhishTank website.</li>
+            <li>Number of records: 59,256</li>
+            <li>Date run: Week of October 6,2022</li>
+            <li>First Submission Data in 2008.</li>
+          </ul>
           </p>
-          <a href="threat-assets.html"><button class="btn btn-outline-light" type="button">
-              Click to read more...
-            </button>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="h-100 p-5 bg-light border rounded-3">
-          <h2>Diamond Models</h2>
+        </section>
+        <section>
+          <h3>Sample Data</h3>
           <p>
-            Discover Diamond Models for the hospital industry
+          <table class="table table-bordered border-primary table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th style="text-align: center;" scope="col">Phish ID</th>
+                <th style="text-align: center;" scope="col">URL</th>
+                <th style="text-align: center;" scope="col">Phish Detail URL</th>
+                <th style="text-align: center;" scope="col">Submission Time</th>
+                <th style="text-align: center;" scope="col">Verified</th>
+                <th style="text-align: center;" scope="col">Verification Time</th>
+                <th style="text-align: center;" scope="col">Online</th>
+                <th style="text-align: center;" scope="col">Target</th>
+              </tr>
+            </thead>
+            <tbody id="tbl_phishtank_body"></tbody>
+          </table>
           </p>
-          <a href="threat-models.html"><button class="btn btn-outline-secondary" type="button">
-              Click to read more...
-            </button>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="h-100 p-5 text-bg-dark rounded-3">
-          <h2>Intelligence Buy-in</h2>
+        </section>
+      </article>
+    </div>
+    <div id="Shodan" class="tabcontent">
+    </div>
+    <div id="CVE" class="tabcontent">
+      <article>
+        <h1>Common Vulnerabilities and Exposures (CVE)</h1>
+        <section>
+          <h3>Data Description</h3>
           <p>
-            See the reasons why the development of an AI4Cyber platform is in the organization's best interests
+          <ul>
+            <li>The below data was downloaded as a CSV file from the Mitre website.</li>
+            <li>Number of records: 185, 770</li>
+            <li>Date run: Week of October 3,2022</li>
+          </ul>
           </p>
-          <a href="threat-intelligence.html"><button class="btn btn-outline-light" type="button">
-              Click to read more...
-            </button>
-          </a>
-        </div>
-      </div>
+        </section>
+        <section>
+          <h3>Sample Data</h3>
+          <p>
+          <table class="table table-bordered border-primary table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th style="text-align: center;" scope="col">CVE ID</th>
+                <th style="text-align: center;" scope="col">Published Date</th>
+                <th style="text-align: center;" scope="col">Vulnerability Status</th>
+                <th style="text-align: center;" scope="col">Description</th>
+                <th style="text-align: center;" scope="col">Reference</th>
+              </tr>
+            </thead>
+            <tbody id="tbl_cve_body"></tbody>
+          </table>
+          </p>
+        </section>
+      </article>
     </div>
   </div>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js"></script>
 </body>
 
 </html>

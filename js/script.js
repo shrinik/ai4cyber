@@ -21,3 +21,45 @@ function openTab(evt, tabName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+
+let table1 = document.getElementById("tbl_phishtank_body");
+if (table1 != "") {
+  // (B) AJAX FETCH CSV FILE
+  fetch("./data/phishtank.csv")
+    .then((res) => res.text())
+    .then((csv) => {
+      // (B2) GENERATE TABLE
+      let rows = csv.split("\r\n");
+      for (let row of rows) {
+        let cols = row.match(/(?:\"([^\"]*(?:\"\"[^\"]*)*)\")|([^\",]+)/g);
+        if (cols != null) {
+          let tr = table1.insertRow();
+          for (let col of cols) {
+            let td = tr.insertCell();
+            td.innerHTML = col.replace(/(^"|"$)/g, "");
+          }
+        }
+      }
+    });
+}
+
+let table2 = document.getElementById("tbl_cve_body");
+if (table2 != "") {
+  // (B) AJAX FETCH CSV FILE
+  fetch("./data/cve.csv")
+    .then((res) => res.text())
+    .then((csv) => {
+      // (B2) GENERATE TABLE
+      let rows = csv.split("\r\n");
+      for (let row of rows) {
+        let cols = row.match(/(?:\"([^\"]*(?:\"\"[^\"]*)*)\")|([^\";]+)/g);
+        if (cols != null) {
+          let tr = table2.insertRow();
+          for (let col of cols) {
+            let td = tr.insertCell();
+            td.innerHTML = col.replace(/(^"|"$)/g, "");
+          }
+        }
+      }
+    });
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Hospital Industry</title>
+
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <script src="js/bootstrap.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">AI4Cyber</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="industry.html">Industry Background</a>
+          <a class="nav-link" href="threat.html">Threat Modelling</a>
+          <a class="nav-link active" href="#">Data Sources</a>
+          <a class="nav-link" href="data.html">Data</a>
+          <a class="nav-link" href="about.html">About Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Data Sources
+      </li>
+    </ol>
+  </nav>
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">Data Sources</h1>
+      <p class="col-md-8 fs-4">
+        <small class="text-muted">This section summarizes the open source intelligence data sources that are relevant to
+          the hospital industry</small>
+      </p>
+    </div>
+  </div>
+  <div class="CenterMe">
+    <article>
+      <h1>Phishtank</h1>
+      <p>Phishtank is a free community site where anyone can submit, verify, track and share phishing data. It is
+        operated by Cisco Talos Intelligence Group (Talos).
+      </p>
+      <section>
+        <h2>Description</h2>
+        <p>
+        <ul>
+          <li>Phishing was identified as one of the most common threats faced by the hospital industry.</li>
+          <li>Successful phishing attemps can lead to data breaches and ransomware which can put hospital data, patient
+            data and patient medical records at risk.</li>
+          <li>
+            PhishTank allows users to submit suspected phishes and track the status of their
+            submissions. Multiple users must submit a phish in order for it to be added to the database.
+          </li>
+          <li>PhishTank continuously updated with new threats</li>
+          <li>PhishTank monitors all industries, not just healthcare thus providing a comprehensive view of potential
+            phishing attacks.
+          </li>
+        </ul>
+        </p>
+      </section>
+      <section>
+        <h2>Collection Strategy</h2>
+        <p>
+        <ul>
+          <li>Phishtank data is updated hourly.
+          </li>
+          <li>The data is downloaded as a CSV file from the PhishTank website.</li>
+          <li>This approach allows for data analysts without programming knowledge to view and manipulate the data.
+          </li>
+        </ul>
+        </p>
+      </section>
+      <section>
+        <h2>Data Collection Summary</h2>
+        <p>
+        <ul>
+          <li>Number of records: 59,256</li>
+          <li>Date run: Week of October 6,2022</li>
+          <li>First Submission Data in 2008.</li>
+        </ul>
+        </p>
+      </section>
+    </article>
+    <article>
+      <h1>Shodan</h1>
+      <p>Shodan is a search engine that lets users search for various types of servers (webcams, routers, servers, etc.)
+        connected to the internet using a variety of filters. Shodan is used widely in cybersecurity research community
+      </p>
+      <section>
+        <h2>Description</h2>
+        <p>
+        <ul>
+          <li>The healthcare sector has a disproportionately high number of data breaches and hence data breaches was
+            identified as a major threat trend for the hospital industry</li>
+          <li>Nowadays, a typical hospital utilizes dozens of IoT devices, including wearables, guided imagery,
+            monitoring sensors, implantable, ingestible, etc. </li>
+          <li>Large-scale use of IoT in healthcare involves the processing and transfer of patients personal information
+            and raises issues around privacy and security since many medical IoT devices lack robust security.</li>
+          <li>
+            Shodan will help to search and identify all medical IoT devices for the organization for further assessment.
+          </li>
+          <li>Shodan will be used to search and collect data related to IoT medical devices, Hospital management
+            systems, or medical devices manufacturer that are connected to the internet directly.
+          </li>
+        </ul>
+        </p>
+      </section>
+      <section>
+        <h2>Collection Strategy</h2>
+        <p>
+        <ul>
+          <li>Shodan's API will be used to search for the relevant device data using search queries.
+          </li>
+          <li>DICOM is a protocol used in medical imaging machines. The search query will search for the keyword "DICOM
+            Server Response" for port 104</li>
+          <li>The data is downloaded using the Shodan API and converted to a suitable format for analysis file </li>
+        </ul>
+        </p>
+      </section>
+      <section>
+        <h2>Data Collection Summary</h2>
+        <p>
+        <ul>
+          <li>Number of records: 1394</li>
+          <li>Date run: Week of October 8,2022</li>
+        </ul>
+        </p>
+      </section>
+    </article>
+    <article>
+      <h1>Common Vulnerabilities and Exposures (CVE)</h1>
+      <p>The Common Vulnerabilities and Exposures (CVE) system provides a reference-method for publicly known
+        information-security vulnerabilities and exposures. The MITRE Corporation, maintains the system, with funding
+        from the US National Cyber Security Division
+      </p>
+      <section>
+        <h2>Description</h2>
+        <p>
+        <ul>
+          <li>The hospital industry's critical assets include IT infrastructure and Information Systems.</li>
+          <li>These assets are vulnerable to malware such as ransomware which was identified as one of the top threats
+            faced by the hospital industry</li>
+          <li>CVEs that are not addressed can be exploited by adversaries to introduce malware like ransomware or for
+            data breaches.</li>
+          <li>
+            CVEs , is the abbreviation for a list of openly reported computer security issues. A security issue with a
+            CVE
+            ID number is what is meant when someone mentions a CVE.Almost invariably, vendors' and researchers' security
+            warnings list at least one CVE ID.
+          </li>
+          <li>CVEs aid IT specialists in the hospitals in organizing their efforts to prioritize and fix these flaws to
+            strengthen the security of computer systems across the hospitals network.
+          </li>
+          <li>Therefore it is important for the hospital industry to keep track of CVEs to understand and protect the IT
+            infrastructure and Information systems from ransomware and data breaches.</li>
+        </ul>
+        </p>
+      </section>
+      <section>
+        <h2>Collection Strategy</h2>
+        <p>
+        <ul>
+          <li>We have downloaded the csv file listing all CVEs from the Mitre website
+          </li>
+        </ul>
+        </p>
+      </section>
+      <section>
+        <h2>Data Collection Summary</h2>
+        <p>
+        <ul>
+          <li>Total CVE Records: 185770
+          </li>
+          <li>Date run: Week of October 3,2022</li>
+        </ul>
+        </p>
+      </section>
+    </article>
+  </div>
+  <link rel="stylesheet" href="css/style.css" />
+</body>
+
+</html>

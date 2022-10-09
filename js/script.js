@@ -31,7 +31,7 @@ if (tab_phish_body != "") {
     .then((res) => res.text())
     .then((csv) => {
       // (B2) GENERATE TABLE
-      let rows = csv.split("\r\n");
+      let rows = csv.split("\n");
       for (let row of rows) {
         let cols = row.match(/(?:\"([^\"]*(?:\"\"[^\"]*)*)\")|([^\",]+)/g);
         if (cols != null) {

@@ -91,6 +91,42 @@
       </article>
     </div>
     <div id="Shodan" class="tabcontent">
+      <article>
+        <h1>Shodan</h1>
+        <section>
+          <h3>Data Description</h3>
+          <p>
+          <ul>
+            <li>DICOM is a protocol used in medical imaging machines. The search query will search for the keyword
+              "DICOM Server Response" for port 104 to identify medical imaging machines exposed to the internet</li>
+            <li>The data is downloaded in JSON format using the Shodan API and converted to a suitable format for
+              analysis file </li>
+            <li>Number of records: 1394</li>
+            <li>Date run: Week of October 8,2022</li>
+          </ul>
+          </p>
+        </section>
+        <section>
+          <h3>Sample Data</h3>
+          <p>
+          <table class="table table-bordered border-primary table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th style="text-align: center;" scope="col">IP</th>
+                <th style="text-align: center;" scope="col">Port</th>
+                <th style="text-align: center;" scope="col">TimeStamp</th>
+                <th style="text-align: center;" scope="col">Organization</th>
+                <th style="text-align: center;" scope="col">Country</th>
+                <th style="text-align: center;" scope="col">ASN</th>
+                <th style="text-align: center;" scope="col">Transport</th>
+                <th style="text-align: center;" scope="col">Data</th>
+              </tr>
+            </thead>
+            <tbody id="tbl_shodan_body"></tbody>
+          </table>
+          </p>
+        </section>
+      </article>
     </div>
     <div id="CVE" class="tabcontent">
       <article>

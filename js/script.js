@@ -63,3 +63,24 @@ if (table2 != "") {
       }
     });
 }
+
+let table3 = document.getElementById("tbl_shodan_body");
+if (table3 != "") {
+  // (B) AJAX FETCH CSV FILE
+  fetch("./data/shodan.csv")
+    .then((res) => res.text())
+    .then((csv) => {
+      // (B2) GENERATE TABLE
+      let rows = csv.split("\r\n");
+      for (let row of rows) {
+        let cols = row.match(/(?:\"([^\"]*(?:\"\"[^\"]*)*)\")|([^\"|]+)/g);
+        if (cols != null) {
+          let tr = table3.insertRow();
+          for (let col of cols) {
+            let td = tr.insertCell();
+            td.innerHTML = col.replace(/(^"|"$)/g, "");
+          }
+        }
+      }
+    });
+}

@@ -22,8 +22,10 @@ function openTab(evt, tabName) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 
-let table1 = document.getElementById("tbl_phishtank_body");
-if (table1 != "") {
+let tab_phish_body = document
+  .getElementById("tbl_phishtank")
+  .getElementsByTagName("tbody")[0];
+if (tab_phish_body != "") {
   // (B) AJAX FETCH CSV FILE
   fetch("./data/phishtank.csv")
     .then((res) => res.text())
@@ -33,7 +35,7 @@ if (table1 != "") {
       for (let row of rows) {
         let cols = row.match(/(?:\"([^\"]*(?:\"\"[^\"]*)*)\")|([^\",]+)/g);
         if (cols != null) {
-          let tr = table1.insertRow();
+          let tr = tab_phish_body.insertRow(-1);
           for (let col of cols) {
             let td = tr.insertCell();
             td.innerHTML = col.replace(/(^"|"$)/g, "");

@@ -22,10 +22,10 @@ function openTab(evt, tabName) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 
-let tab_phish_body = document
+let tbl_phish_body = document
   .getElementById("tbl_phishtank")
   .getElementsByTagName("tbody")[0];
-if (tab_phish_body != "") {
+if (tbl_phish_body != "") {
   // (B) AJAX FETCH CSV FILE
   fetch("./data/phishtank.csv")
     .then((res) => res.text())
@@ -35,7 +35,7 @@ if (tab_phish_body != "") {
       for (let row of rows) {
         let cols = row.match(/(?:\"([^\"]*(?:\"\"[^\"]*)*)\")|([^\",]+)/g);
         if (cols != null) {
-          let tr = tab_phish_body.insertRow(-1);
+          let tr = tbl_phish_body.insertRow(-1);
           for (let col of cols) {
             let td = tr.insertCell();
             td.innerHTML = col.replace(/(^"|"$)/g, "");
@@ -45,18 +45,20 @@ if (tab_phish_body != "") {
     });
 }
 
-let table2 = document.getElementById("tbl_cve_body");
-if (table2 != "") {
+let tbl_cve_body = document
+  .getElementById("tbl_cve")
+  .getElementsByTagName("tbody")[0];
+if (tbl_cve_body != "") {
   // (B) AJAX FETCH CSV FILE
   fetch("./data/cve.csv")
     .then((res) => res.text())
     .then((csv) => {
       // (B2) GENERATE TABLE
-      let rows = csv.split("\r\n");
+      let rows = csv.split("\n");
       for (let row of rows) {
         let cols = row.match(/(?:\"([^\"]*(?:\"\"[^\"]*)*)\")|([^\";]+)/g);
         if (cols != null) {
-          let tr = table2.insertRow();
+          let tr = tbl_cve_body.insertRow();
           for (let col of cols) {
             let td = tr.insertCell();
             td.innerHTML = col.replace(/(^"|"$)/g, "");
@@ -66,18 +68,20 @@ if (table2 != "") {
     });
 }
 
-let table3 = document.getElementById("tbl_shodan_body");
-if (table3 != "") {
+let tbl_shodan_body = document
+  .getElementById("tbl_shodan")
+  .getElementsByTagName("tbody")[0];
+if (tbl_shodan_body != "") {
   // (B) AJAX FETCH CSV FILE
   fetch("./data/shodan.csv")
     .then((res) => res.text())
     .then((csv) => {
       // (B2) GENERATE TABLE
-      let rows = csv.split("\r\n");
+      let rows = csv.split("\n");
       for (let row of rows) {
         let cols = row.match(/(?:\"([^\"]*(?:\"\"[^\"]*)*)\")|([^\"|]+)/g);
         if (cols != null) {
-          let tr = table3.insertRow();
+          let tr = tbl_shodan_body.insertRow();
           for (let col of cols) {
             let td = tr.insertCell();
             td.innerHTML = col.replace(/(^"|"$)/g, "");

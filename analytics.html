@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Hospital Industry</title>
+
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <script src="js/bootstrap.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">AI4Cyber</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="industry.html">Industry Background</a>
+          <a class="nav-link" href="threat.html">Threat Modelling</a>
+          <a class="nav-link active" href="#">Data Sources</a>
+          <a class="nav-link" href="data.html">Data</a>
+          <a class="nav-link" href="analytics.html">Analytics</a>
+          <a class="nav-link" href="visualization.html">Visualization</a>
+          <a class="nav-link" href="about.html">About Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Analytics
+      </li>
+    </ol>
+  </nav>
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">Analytical Approaches</h1>
+      <p class="col-md-8 fs-4">
+        <small class="text-muted">This section discusses the different analytical approaches used to develop AI4Cyber
+          for the hospital industry</small>
+      </p>
+    </div>
+  </div>
+  <div class="CenterMe">
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'Phishtank')" id="defaultOpen">Phishtank</button>
+      <button class="tablinks" onclick="openTab(event, 'Shodan1')">Shodan 1</button>
+      <button class="tablinks" onclick="openTab(event, 'Shodan2')">Shodan 2</button>
+      <button class="tablinks" onclick="openTab(event, 'Ransomware')">Ransomware</button>
+    </div>
+    <div id="Phishtank" class="tabcontent">
+      <article>
+        <h1>Supervised Machine Learning Classification</h1>
+        <p>We used supervised machine learning technique to create a model that can classify a website as a phishing
+          website or a benign website.
+        </p>
+        <section>
+          <h3>Overview</h3>
+          <p>
+          <ul>
+            <li><strong>Objective:</strong> Classify websites as phishing or benign
+            </li>
+            <li>
+              <strong>Data Sources:</strong> The list of phishing and benign URLs was obtained from Phishtank &
+              AlexaRank respectively in csv format.
+            </li>
+            <li><strong>Method:</strong> Supervised predictive analysis using classification. </li>
+            <li><strong>Result:</strong> Multiple classification models were evaluated with Random Forest model having
+              the best
+              performance.
+            </li>
+          </ul>
+          </p>
+        </section>
+        <section>
+          <h3>Justification of chosen analytical approach</h3>
+          <p>
+          <ul>
+            <li><strong>Why this analytical technique?:</strong> The data set provided by Phishtank contains known
+              Phishing web URL links and targets. Thus, it can be used for identifying potential phishing sites that
+              may compromise the hospital network and data. The goal is to tease out attributes of a Phishing site so
+              we are better able to detect phishing sites overall.
+
+            </li>
+            <li>
+              <strong>Industry Value:</strong>Phishing is the most effective way for a bad-actor to gain access to a
+              hospital's network. With deeper understanding of the attributes that phishing sites have, an
+              organization can proactively prevent attacks by deploying mitigating controls such as firewalls or SPAM
+              filters; protecting the enterprise.
+
+
+            </li>
+            <li><strong>AI4Cyber Value:</strong> Phishtank data repositories are updated continually. Linking to this
+              data allows for a realistic view of the phishing threat landscape and allows AI to derive ways in which
+              defenses can pivot to better detect and block attacks.
+
+          </ul>
+          </p>
+        </section>
+      </article>
+    </div>
+    <div id="Shodan1" class="tabcontent">
+      <article>
+        <h1>Passive Vulnerability Assessment </h1>
+        <p>Identify Common Platform Enumerations (CPEs) for devices used in hospital industry using Shodan and then
+          search for vulnerabilities impacting CPEs using National Vulnerability Database (NVD).
+        </p>
+        <section>
+          <h3>Approach</h3>
+          <p>
+          <ul>
+            <li>Find internet connected devices/machines used in hospital industry using Shodan
+            </li>
+            <li>Identify the common CPEs</li>
+            <li>Correlate the CVEs for the CPEs from above step
+            </li>
+          </ul>
+          </p>
+        </section>
+        <section>
+          <h3>Justification of chosen analytical approach</h3>
+          <p>
+          <ul>
+            <li><strong>Why this analytical technique?:</strong>Identify common vulnerabilities affecting medical
+              devices/machines used in hospitals.
+
+            </li>
+            <li>
+              <strong>Industry Value:</strong>Data breaches are a common threat to hospital industry. Knowing possible
+              vulnerabilities, hospital IT departments can address them before they can be exploited to gain
+              unauthorized access to the hospital network resulting in data breaches.
+
+
+            </li>
+            <li><strong>AI4Cyber Value:</strong>Shodan continually crawls the internet and NVD is updated with the
+              latest vulnerabilities. Using them in combination will result in timely and actionable intelligence on
+              vulnerabilities in
+              medical machines/devices exposed to the internet.
+
+          </ul>
+          </p>
+        </section>
+      </article>
+    </div>
+    <div id="Shodan2" class="tabcontent">
+      <article>
+        <h1>Unsupervised Machine Learning Classification</h1>
+        <p>We used Weka platform for the AI analytics part and tried different models to explore and classify the data
+        </p>
+        <section>
+          <h3>Approach</h3>
+          <p>
+          <ul>
+            <li>Data prepared outside Weka
+
+            </li>
+            <li>Explore, classify, and try different models in Weka
+
+            </li>
+          </ul>
+          </p>
+        </section>
+        <section>
+          <h3>Justification of chosen analytical approach</h3>
+          <p>
+          <ul>
+            <li><strong>Why this analytical technique?:</strong>it allows classifying medical devices/machines into
+              different groups which can aid in further analysis w.r.t vulnerabilities and other aspects.
+
+            </li>
+            <li>
+              <strong>Industry Value:</strong>It will help find vulnerabilities in medical devices based on the group
+              they fall into.
+            </li>
+            <li><strong>AI4Cyber Value:</strong>Proactively address the threat of possible vulnerabilities in
+              medical equipment before they are found by hackers and researchers.
+
+          </ul>
+          </p>
+        </section>
+      </article>
+    </div>
+    <div id="Ransomware" class="tabcontent">
+      <article>
+        <h1>Unsupervised Clustering of Ransomware </h1>
+        <p>Identify common features of ransomware
+          using clustering so that they can be used to identify newer ransomware that exhibit similar features.
+        </p>
+        <section>
+          <h3>Approach</h3>
+          <p>
+          <ul>
+            <li>Use Kaggle dataset with 60K records across 18 attributes
+            </li>
+            <li>Prepare the data</li>
+            <li>Feature selection
+            </li>
+            <li>Classification
+            </li>
+            <li>Clustering
+            </li>
+          </ul>
+          </p>
+        </section>
+        <section>
+          <h3>Justification of chosen analytical approach</h3>
+          <p>
+          <ul>
+            <li><strong>Why this analytical technique?:</strong>Allows identifying and grouping of ransomware features
+              which may not have been found using manual analysis
+
+            </li>
+            <li>
+              <strong>Industry Value:</strong>Ransomware attacks are one of common threats in hospital and healthcare
+              industry targeting patient medical records and information systems.
+
+
+            </li>
+            <li><strong>AI4Cyber Value:</strong>Allows identification of possible ransomware code by comparing its
+              characteristics against those exhibited by ransomware
+
+          </ul>
+          </p>
+        </section>
+      </article>
+    </div>
+  </div>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js"></script>
+</body>
+
+</html>

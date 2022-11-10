@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Key Insights and Intelligence</title>
+
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <script src="js/bootstrap.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">AI4Cyber</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="industry.html">Industry Background</a>
+          <a class="nav-link" href="threat.html">Threat Modelling</a>
+          <a class="nav-link" href="data-sources.html">Data Sources</a>
+          <a class="nav-link" href="data.html">Data</a>
+          <a class="nav-link" href="analytics.html">Analytics</a>
+          <a class="nav-link" href="visualization.html">Visualization</a>
+          <a class="nav-link active" href="#">Key Insights</a>
+          <a class="nav-link" href="intel.html">Operational Intelligence</a>
+          <a class="nav-link" href="about.html">About Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Key Insights and Intelligence
+      </li>
+    </ol>
+  </nav>
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">Key Insights and Intelligence</h1>
+      <p class="col-md-8 fs-4">
+        <small class="text-muted">This section discusses key insights and intelligence obtained using the AI4Cyber
+          platform</small>
+      </p>
+    </div>
+  </div>
+  <div class="CenterMe">
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'attack')" id="defaultOpen">Attack Surface</button>
+      <button class="tablinks" onclick="openTab(event, 'iomt')">IoMT</button>
+      <button class="tablinks" onclick="openTab(event, 'phishing')">External Servers and Phishing</button>
+    </div>
+    <div id="attack" class="tabcontent">
+      <article>
+        <h1>Attack Surface</h1>
+        <section>
+          <h3>Key Insights</h3>
+          <p>
+          <ul>
+            <li>We found that scanning Shodan for medical devices by manufacturers such as Omron yields thousands of
+              devices that were accessible on the public internet.
+            </li>
+            <li>As hospitals focus on patient care through rapid developing technology, cybersecurity is not taken in
+              consideration.</li>
+            <li>Due to the largely unmanaged or undermanaged state of many IoMT device assets on the hospital premise,
+              it is implied that the standard approach for cyber security will be insufficient for hospital networks.
+            </li>
+            <li>Although hospital networks are generally open for communication, it is vital to at least take steps to
+              partially segment networks and use AI to scan for unauthorized access. </li>
+          </ul>
+          </p>
+        </section>
+      </article>
+    </div>
+    <div id="iomt" class="tabcontent">
+      <article>
+        <h1>IoMT</h1>
+        <section>
+          <h3>Key Insights</h3>
+          <p>
+          <ul>
+            <li>We found that the top vulnerabilities for a hack often came from IoMT devices. These devices are often
+              publicly accessible and can be found during the internet search. Hospitals are in the business of saving
+              lives, as such, the IoMT devices are developed at a rapid pace without Cybersecurity being maintained.
+            </li>
+            <li>In one single search of a manufacturer such as Omron, we found that NVD for CPE appeared 42 times in the
+              dataset. </li>
+            <li>Simply, in order to save lives, technology must adapt quickly, devices are going to innately be
+              unsecured regardless of vendor. Faulty programming, bugs in software and manufacturer backdoors lead to
+              high risk devices.
+            </li>
+            <li>The implication is that any one of the thousands of IoMT devices within a hospital can be a gateway to a
+              hacker’s entry into the network. Once in the network, a hacker can easily shut down life saving medical
+              tools in demand for ransom and data loss may occur. The net result, people will die.</li>
+            <li>Wherever possible, these IoMT devices should be placed behind a strict Firewall or NAT and accessed with
+              up-to-date protocols such as WPA3 and current standards of encryption to reduce the attack surface.
+              Devices must maintain a ridged update schedule to immediately patch any vulnerabilities discovered by the
+              manufacturer.
+            </li>
+          </ul>
+          </p>
+        </section>
+      </article>
+    </div>
+    <div id="phishing" class="tabcontent">
+      <article>
+        <h1>External Servers and Phishing</h1>
+        <section>
+          <h3>Key Insights</h3>
+          <p>
+          <ul>
+            <li>We found that the top type of attack in the hospital industry was Phishing. Healthcare employees receive
+              an average of 14 to 59 malicious emails per year.
+            </li>
+            <li>Unfortunately, due to antiquated email protocols that are still used today, blocking phishing emails is
+              no easy task; a hacker simply changes emails or spoofs their email address.
+            </li>
+            <li>While we expect demand for external servers such as websites and general internet access, the hospital
+              industry can reduce their attack surface by providing better centralized cybersecurity services that
+              proactively monitor emails through the use of AI and ML and clustering techniques to determine if a
+              website is phishing or not.
+            </li>
+            <li>The diamond models highlighted that phishing was a main point of concern and that hospitals are
+              extremely lucrative due to their inability to cease operations. This suggests that the use of AI
+              techniques need to be more widespread on the hospital networks so the hospital can proactively safe guard
+              its assets.
+            </li>
+            <li>Hospitals must maintain an open communication structure but AI can help maintain the openness while
+              simultaneously providing strong cybersecurity support.
+            </li>
+          </ul>
+          </p>
+        </section>
+      </article>
+    </div>
+  </div>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js"></script>
+</body>
+
+</html>
